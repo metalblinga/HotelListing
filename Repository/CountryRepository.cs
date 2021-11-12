@@ -1,7 +1,9 @@
 ﻿using Entities.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +18,13 @@ namespace Repository
         public IEnumerable<Country> GetAllCountries()
         {
             return GetAll().ToList();
+        }
+
+        public Country GetCountryById(int id)
+        {
+            return Get(c => c.Id == id)
+                .Include(c => c.Hotels)
+                .FirstOrDefault();
         }
 
     }

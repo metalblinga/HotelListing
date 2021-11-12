@@ -9,6 +9,8 @@ namespace Repository
 {
     public interface ICountryRepository : IRepositoryBase<Country>
     {
+        public IEnumerable<Country> GetAllCountries();
 
+        public Country GetCountryById(int id);
     }
 }

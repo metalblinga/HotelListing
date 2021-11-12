@@ -1,4 +1,6 @@
 using HotelListing.Configurations;
+using HotelListing.Services;
+using HotelListing.Services.Hotel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,8 +32,8 @@ namespace HotelListing
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<DatabaseContext>(options => 
-            
+            services.AddDbContext<DatabaseContext>(options =>
+
                 options.UseNpgsql(Configuration.GetConnectionString("sqlConnection"))
             );
 
@@ -52,9 +54,13 @@ namespace HotelListing
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelListing", Version = "v1" });
             });
 
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<IHotelService, HotelService>();
+            services.AddTransient<IRepositoryWrapper, RepositoryWrapper>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +68,7 @@ namespace HotelListing
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();   
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseCors("AllowAll");
