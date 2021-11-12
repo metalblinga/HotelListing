@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelListing", "HotelListing\HotelListing.csproj", "{3BDF5F23-5A77-4160-8F59-1538C6AB3696}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelListing", "HotelListing\HotelListing.csproj", "{3BDF5F23-5A77-4160-8F59-1538C6AB3696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{E71137FA-CE3E-4E4E-AD1D-928D21B81B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{FABFCC73-3E6E-4D3A-9F73-23146716E6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3BDF5F23-5A77-4160-8F59-1538C6AB3696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BDF5F23-5A77-4160-8F59-1538C6AB3696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDF5F23-5A77-4160-8F59-1538C6AB3696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71137FA-CE3E-4E4E-AD1D-928D21B81B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71137FA-CE3E-4E4E-AD1D-928D21B81B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71137FA-CE3E-4E4E-AD1D-928D21B81B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71137FA-CE3E-4E4E-AD1D-928D21B81B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABFCC73-3E6E-4D3A-9F73-23146716E6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABFCC73-3E6E-4D3A-9F73-23146716E6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABFCC73-3E6E-4D3A-9F73-23146716E6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABFCC73-3E6E-4D3A-9F73-23146716E6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
